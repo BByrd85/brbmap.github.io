@@ -1,0 +1,114 @@
+<!DOCTYPE = html>
+<html style="height: 100%;">
+    <head>
+        <title>Map BRB</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="scripts/leaflet.css">
+        <script src="scripts/leaflet.js"></script>
+    </head>
+
+    <body style="height: 100%; margin: 0;">
+        <div id="map" style="width: 100%; height: 100%; background: #53679f;"></div>
+        <script type="text/javascript">
+        
+        //Creating the Map
+            var map = L.map('map').setView([0, 0], 0);
+            L.tileLayer('tiles/{z}/{x}/{y}.png', {
+                continuousWorld: false,
+                noWrap: true,
+                minZoom: 3,
+                maxZoom: 5,
+            }).addTo(map);
+        
+        //24/7s
+            var tf_sandye = L.marker([36.0135, -106.3916]).bindPopup("<b>24/7 Sandy Shores East</b>");
+            var tf_sandyw = L.marker([15,15]).bindPopup("<b>24/7 Sandy Shores West</b>");
+            var tf_chall = L.marker([1,1]).bindPopup("<b>24/7 Calais</b>");
+            var tf_pd = L.marker([2,2]).bindPopup("<b>24/7 PD</b>");
+            var tf_paletoex = L.marker([3,3]).bindPopup("<b>24/7 Paleto Express</b>");
+            var tf_grove = L.marker([4,4]).bindPopup("<b>24/7 Grove St</b>");
+            var tf_innocence = L.marker([5,5]).bindPopup("<b>24/7 Innocence Rd</b>");
+            var tf_grapeseed = L.marker([6,6]).bindPopup("<b>24/7 Grapeseed</b>");
+            var tf_r68e = L.marker([7,7]).bindPopup("<b>24/7 R68 East</b>");
+            var tf_r68w = L.marker([8,8]).bindPopup("<b>24/7 R68 West</b>");
+            var tf_lil = L.marker([9,9]).bindPopup("<b>24/7 Little Seoul</b>");
+            var tf_clinton = L.marker([10,10]).bindPopup("<b>24/7 Clinton Ave</b>");
+            var tf_tatavian = L.marker([11,11]).bindPopup("<b>24/7 Palomino Fwy</b>");
+            var tf_inseno = L.marker([12,12]).bindPopup("<b>24/7 Inseno Road</b>");
+            var tf_chumash = L.marker([13,13]).bindPopup("<b>24/7 Chumash</b>");
+            var tf_senora = L.marker([14,14]).bindPopup("<b>24/7 Senora Fwy</b>");
+            var tf_eclipsew = L.marker([16,16]).bindPopup("<b>24/7 West Eclipse</b>");
+            var tf_olympic = L.marker([17,17]).bindPopup("<b>24/7 Olympic Fwy</b>");
+            var tf_rockford = L.marker([18,18]).bindPopup("<b>24/7 North Rockford Drive</b>");
+            var tf_mirrorpark = L.marker([19,19]).bindPopup("<b>24/7 Mirror Park Gas</b>");
+            
+        //Auto Shops
+            var as_hayes = L.marker([1111,-1111]).bindPopup("<b>Hayes Auto</b>");
+            var as_route_68 = L.marker([2222,-2222]).bindPopup("<b>Route 68 Auto</b>");
+            var as_southside = L.marker([3333,-3333]).bindPopup("<b>Southside Auto Shop</b>");
+            var as_paleto = L.marker([4444,-4444]).bindPopup("<b>Paleto Bay Auto Shop</b>");
+
+        //Ammunation
+            var am_adelina = L.marker([111,111]).bindPopup("<b>Adelina's Ammunation</b>");
+            var am_cypress = L.marker([222,222]).bindPopup("<b>Cypress Flats' Ammunation</b>");
+            var am_lamesa = L.marker([333,333]).bindPopup("<b>La Mesa's Ammunation</b>");
+            var am_hawick = L.marker([444,444]).bindPopup("<b>Hawick's Ammunation</b>");
+            var am_lil = L.marker([555,555]).bindPopup("<b>Little Seoul's Ammunation</b>");
+            var am_morningwood = L.marker([666,666]).bindPopup("<b>Morningwood's Ammunation</b>");
+            var am_tatavian = L.marker([777,777]).bindPopup("<b>Tatavian's Ammunation</b>");
+            var am_zancudo = L.marker([888,888]).bindPopup("<b>Zancudo's Ammunation</b>");
+            var am_sandy = L.marker([999,999]).bindPopup("<b>Sandy Shores' Ammunation</b>");
+            var am_paleto = L.marker([119,119]).bindPopup("<b>Paleto Bay's Ammunation</b>");
+        
+        //Bars/Restaurants
+            var br_mpt = L.marker([-100,100]).bindPopup("<b>Mirror Park Tavern</b>");
+            var br_belmont = L.marker([-200,200]).bindPopup("<b>The Belmont Hotel</b>");
+            var br_yji = L.marker([-300,300]).bindPopup("<b>Yellow Jack Inn</b>");
+            var br_bws = L.marker([-400,400]).bindPopup("<b>Black Woods Saloon</b>");
+            var br_tbl = L.marker([-500,500]).bindPopup("<b>The Black Lantern</b>");
+            var br_tequila = L.marker([-600,600]).bindPopup("<b>Tequila-La-La</b>");
+            var br_sals = L.marker([-700,700]).bindPopup("<b>Salieri's</b>");
+            var br_pops = L.marker([-800,800]).bindPopup("<b>Pop's Diner</b>");
+            var br_hornys = L.marker([-900,900]).bindPopup("<b>Horny's</b>");
+            var br_una = L.marker([-100,-100]).bindPopup("<b>Up'n'Atom</b>");
+            var br_kat = L.marker([-200,-200]).bindPopup("<b>Kat Cafe</b>");
+            var br_moretti = L.marker([-300,300]).bindPopup("<b>Moretti Family Restaurant</b>");
+            var br_beans = L.marker([-400,400]).bindPopup("<b>Cool Beans</b>");
+            var br_bshot = L.marker([-500,500]).bindPopup("<b>Burgershot</b>");
+            var br_arribas = L.marker([-600,600]).bindPopup("<b>Arribas Cantina</b>");
+
+        //Big 5
+            var b5_bennys = L.marker([-1000,1000]).bindPopup("<b>Benny's</b>");
+            var b5_d8 = L.marker([-2000,2000]).bindPopup("<b>Dynasty 8</b>");
+            var b5_pdm = L.marker([-3000,3000]).bindPopup("<b>PDM</b>");
+            var b5_yt = L.marker([-4000,4000]).bindPopup("<b>YouTool</b>");
+            var b5_weazel = L.marker([-5000,5000]).bindPopup("<b>Weazel News</b>");
+                
+        //Pawn Shops
+            var ps_southside = L.marker([14.4346,36.4746]).bindPopup("<b>Southside Pawn Shop</b>");
+            var ps_vespucci = L.marker([13.5819,21.0058]).bindPopup("<b>Vespucci Pawn Shop</b>");
+            var ps_sandy = L.marker([9.102,55.8105]).bindPopup("<b>Sandy Shores Pawn Shop</b>");
+                
+        //Marker Groups
+            var mg_tf = L.layerGroup([tf_sandye, tf_chall, tf_pd, tf_paletoex, tf_grove, tf_innocence, tf_grapeseed, tf_r68e, tf_r68w, tf_lil, tf_clinton, tf_tatavian, tf_inseno, tf_chumash, tf_senora, tf_sandyw, tf_eclipsew, tf_olympic, tf_rockford, tf_mirrorpark]);
+            var mg_as = L.layerGroup([as_hayes, as_route_68, as_southside, as_paleto]);
+            var mg_am = L.layerGroup([am_adelina, am_cypress, am_lamesa, am_hawick, am_lil, am_morningwood, am_tatavian, am_zancudo, am_sandy, am_paleto]);
+            var mg_br = L.layerGroup([br_mpt, br_belmont, br_yji, br_bws, br_tbl, br_tequila, br_sals, br_pops, br_hornys, br_una, br_kat, br_moretti, br_beans, br_bshot, br_arribas]);
+            var mg_b5 = L.layerGroup([b5_bennys, b5_d8, b5_pdm, b5_yt, b5_weazel]);
+            var mg_ps = L.layerGroup([ps_sandy, ps_vespucci, ps_southside]);
+            
+        //Marker Overlay
+            var overlays = {
+          "24/7s" : mg_tf,
+          "Auto Shops" : mg_as,
+          "Ammunations" : mg_am
+          "Bars/Restaurants" : mg_br,
+          "Big 5" : mg_b5,
+          "Pawn Shops" : mg_ps
+                }
+                
+        //Marker Group Control
+            L.control.layers(null, overlays).addTo(map);
+        </script>
+    </body>
+</html>
